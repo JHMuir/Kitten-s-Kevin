@@ -32,22 +32,5 @@ async def FinalFantasyUwU(interaction):
         sign up, awnd enjoy Eowzea today!
     """
     await interaction.response.send_message(response)
-    
-#punching someone
-@client.tree.command(name='bully', description="Punch someone in the face")
-async def Bully(interaction, member: discord.Member):
-    quotes = [
-        (f"Meow! {interaction.user.nick} has beaten {member.nick} to a bloody pulp!"),
-        (f"Meow! {member.nick} should kill themselves!"),
-        (f"Meow! {interaction.user.nick} has shoved {member.nick} off of a cliff."),
-        (f"Meow! {member.nick} should uninstall irl."),
-        (f"Meow! Jump."),
-        (f"Meow! Kick the chair already."),
-    ]
-    bullyDict[str(interaction.user.name)][str(member.name)] = 1
-    response = random.choice(quotes)
-    response = response + f" {interaction.user.nick} has bullied {member.nick} a total of {bullyDict[str(interaction.user.name)][str(member.name)]} times."
-    bullyDict[interaction.user][member.name] += 1
-    await interaction.response.send_message(response)
 
 client.run(TOKEN)
