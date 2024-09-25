@@ -51,6 +51,6 @@ def generate_reply(user_message: str) -> str:
     response = conversation.predict(human_input=user_message)
     return response
 
-async def reply(history: list) -> str:
-    res = await asyncio.to_thread(generate_reply, history)
+async def reply(user_message:str) -> str:
+    res = await asyncio.to_thread(generate_reply, user_message)
     return res
