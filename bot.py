@@ -31,6 +31,7 @@ class KittensBot(discord.Client):
         for guild in self.guilds:
             print(f'{guild.name}(ID: {guild.id})')
         await self.tree.sync()
+        brain.initiate_longterm_memory()
         print(f'{self.user} is ready.')
         
     async def on_message(self, message: discord.Message):
